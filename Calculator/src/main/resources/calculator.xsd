@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.calculate.com/soap/calculator"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.calculate.com/soap/calculator" elementFormDefault="qualified">
+
+    <xsd:element name="OperationRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="number1" type="xsd:int" />
+                <xsd:element name="number2" type="xsd:int" />
+                <xsd:element name="operator" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Result">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="result" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xs:schema>

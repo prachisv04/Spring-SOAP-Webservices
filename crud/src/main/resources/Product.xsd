@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.product.com/crud/model"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.product.com/crud/model" elementFormDefault="qualified">
+
+    <xsd:complexType name="Product">
+        <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" />
+            <xsd:element name="Category" type="xsd:string" />
+            <xsd:element name="Name" type="xsd:string" />
+            <xsd:element name="Price" type="xsd:double" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xs:complexType name="ServiceStatus">
+        <xs:sequence>
+            <xs:element name="status" type="xs:string" />
+            <xs:element name="message" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xsd:element name="SaveProductRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="product" type="tns:Product" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="SaveProductResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="response" type="tns:ServiceStatus" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="GetProductRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Id" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="GetProductResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="response" type="tns:ServiceStatus" />
+                <xsd:element name="product" type="tns:Product" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="UpdateProductRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="product" type="tns:Product" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="UpdateProductResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="response" type="tns:ServiceStatus" />
+                <xsd:element name="product" type="tns:Product" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DeleteProductRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Id" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="DeleteProductResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="response" type="tns:ServiceStatus" />
+                <xsd:element name="product" type="tns:Product" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+</xs:schema>
